@@ -4,4 +4,5 @@ class AddUserIdToPins < ActiveRecord::Migration
     add_column :pins, :integer, :string
     add_index :pins, :integer
   end
+
 end
