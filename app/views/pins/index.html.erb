@@ -20,13 +20,13 @@
         <% if pin.user == current_user %>
           <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
           <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <end>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<% if user_signed_in? %>
-  <%= link_to 'New Pin', new_pin_path %>
-<% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'New Pin', new_pin_path %>
+  <% end %>
