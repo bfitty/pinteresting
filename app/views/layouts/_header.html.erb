@@ -14,30 +14,48 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "How To", howto_path %></li>
-        <li><%= link_to "About", about_path %></li>
-<<<<<<< HEAD
+        <li>
+          <button type="button" class="btn btn-default navbar-btn">
+            <%= link_to root_path do %>
+            <span class="glyphicon glyphicon-home"></span> Home
+            <% end %>
+          </li>
+          </button>
         <% if user_signed_in? %>
           <li>
-            <%= link_to new_pin_path do %>
             <button type="button" class="btn btn-default navbar-btn">
-              <span class="glyphicon glyphicon-search"></span> New Pin
+            <%= link_to new_pin_path do %>
+              <span class="glyphicon glyphicon-plus"></span> New Pin
               <% end %>          
               </li>
             </button>
-=======
-        <% if user_signed_in? %>      
-           <li> 
-            <%= link_to new_pin_path do %>
-            <span class="glyphicon glyphicon-plus"></span> New Pin
-          <% end %>
+        <li>
+          <button type="button" class="btn btn-default navbar-btn">
+          <%= link_to edit_user_registration_path do %>
+          <span class="glyphicon glyphicon-cog"></span> Account Settings
+        <% end %>
+        </li>
+        </button> 
+         <li>
+          <button type="button" class="btn btn-default navbar-btn">
+            <%= link_to about_path do %>
+            <span class="glyphicon glyphicon-question-sign"></span> About
+            <% end %>
           </li>
->>>>>>> ec932c352e97b774e09c329c8c31395838b21a06
-        <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          </button>
+          <li>
+            <button type="button" class="btn btn-default navbar-btn">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          </li>
+          </button>
         <% else %>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <li>
+            <button type="button" class="btn btn-default navbar-btn">
+            <%= link_to new_user_session_path do %>
+            <span class="glyphicon glyphicon-user"></span>Sign In
+            <% end %>
+          </li>
+          </button>
         <% end %>
     </ul>
     </div><!-- /.navbar-collapse -->
